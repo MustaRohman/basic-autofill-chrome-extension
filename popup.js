@@ -19,13 +19,30 @@
 //   }, false);
 // }, false);
 
-document.addEventListener('DOMContentLoaded', function () {
-	var anObject = {
-		name: "anObject",
-		number: 28,
-		something: 'something'
-	}
 
-	alert(anObject.name);
+
+document.addEventListener('DOMContentLoaded', function () {
+	// var anObject = {
+	// 	name: "anObject",
+	// 	number: 28,
+	// 	something: 'something'
+	// }
+
+	// alert(anObject.name);
+
+  // chrome.tabs.query({active:true, currentWindow:true}, function (tabs) {
+  // 	// body...
+  // 	var tab = tabs[0];
+  // 	tab.
+  // })
+
+	var setButton = document.getElementById('settings');
+	setButton.addEventListener('click', function () {
+		// body...
+		window.open("http://www.google.com");
+	})
+
+  
+  
 
 });

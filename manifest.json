@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "GTmetrix Analyzer Plugin",
-  "description": "This extension will analyze a page using GTmetrix",
+  "name": "AutoFill",
+  "description": "This extension will auto-fill login pages",
   "version": "1.0",
 
   "browser_action": {
@@ -10,6 +10,6 @@
    "default_popup": "popup.html"
   },
   "permissions": [
-   "activeTab"
+   "tabs"
    ]
 }

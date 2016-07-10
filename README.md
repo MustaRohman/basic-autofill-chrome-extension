@@ -8,7 +8,7 @@ Assumptions:
 
 ### How do I get set up? ###
 
-1. Download repository folder using "Downloads" link on left side-bar
+1. Download repository folder using "Downloads" link on left side-bar. You can download the repo from a specific branch in the Downloads screen
 2. Open Chrome. Click on "Settings" under the drop-down menu
 ![Screen Shot 2016-07-10 at 15.25.12.png](https://bitbucket.org/repo/Xa8Xjg/images/3110307171-Screen%20Shot%202016-07-10%20at%2015.25.12.png)
 3. Click on "Extensions" link on the left, and check the "Developer Mode" box
@@ -16,4 +16,4 @@ Assumptions:
 4. Click "Load unpacked extension" and navigate to the downloaded repository, then click ok.
 ![Screen Shot 2016-07-10 at 15.35.30.png](https://bitbucket.org/repo/Xa8Xjg/images/3269444388-Screen%20Shot%202016-07-10%20at%2015.35.30.png)
 
-The extension should now appear in the UI of Chrome, next to the address bar. You should be able to interact with the new page action button. 
+The extension should now appear in the UI of Chrome, next to the address bar. You should be able to interact with the new page action button.

@@ -20,29 +20,56 @@
 // }, false);
 
 
+function storeURL() {
+     chrome.tabs.query({active:true, currentWindow:true}, function (tabs) {
+          var activeTab = tabs[0];
+          var tabURL = activeTab.url;
+          localStorage.setItem("url", tabURL);
+
+     });
+
+} ;
+
+function fillUsername() {
+    // body...
+    chrome.tabs.executeScript({
+          code: 'var formObjects = document.getElementsByClassName("form-control"); console.log("Number of items: " + formObjects.length); var userField = formObjects[0]; userField.value = "Musta Rohman";'
+    });
+    // var userField = formObjects[0];
+    // userField.value = "Musta Rohman";
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
-	// var anObject = {
-	// 	name: "anObject",
-	// 	number: 28,
-	// 	something: 'something'
-	// }
 
-	// alert(anObject.name);
+    var currentTab;
 
-  // chrome.tabs.query({active:true, currentWindow:true}, function (tabs) {
-  // 	// body...
-  // 	var tab = tabs[0];
-  // 	tab.
-  // })
+    var setButton = document.getElementById('settings');
+    setButton.addEventListener('click', function () {
 
-	var setButton = document.getElementById('settings');
-	setButton.addEventListener('click', function () {
-		// body...
-		window.open("http://www.google.com");
-	})
+        // console.log("hellooooo");
 
-  
-  
+        // chrome.tabs.getSelected(null, function (tab) {
+        //     currentTab = tab;
+        //     tab.console.log(tab.title);
+        // });
+        fillUsername();
+
+        // if (typeof(Storage) !== "undefined") {
+        //     storeURL();
+        // } else {
+        //     alert("Sorry");
+        // }
+
+        // chrome.tabs.executeScript({
+        //   code: 'console.log("Testing")'
+        // });
+    });
+
+    var viewButton = document.getElementById('view');
+    viewButton.addEventListener('click', function () {
+         var tabURL = localStorage.url;
+         alert(tabURL);
+    })
 
 });

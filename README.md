@@ -17,20 +17,3 @@ Assumptions:
 ![Screen Shot 2016-07-10 at 15.35.30.png](https://bitbucket.org/repo/Xa8Xjg/images/3269444388-Screen%20Shot%202016-07-10%20at%2015.35.30.png)
 
 The extension should now appear in the UI of Chrome, next to the address bar. You should be able to interact with the new page action button. 
-
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact

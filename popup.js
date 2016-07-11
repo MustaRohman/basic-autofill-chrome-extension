@@ -31,9 +31,7 @@ function storeURL() {
 }
 
 function fillUsername() {
-    chrome.tabs.executeScript({
-          code: 'var formObjects = document.getElementsByClassName("form-control"); console.log("Number of items: " + formObjects.length); var userField = formObjects[0]; userField.value = "Musta Rohman";'
-    });
+    chrome.tabs.executeScript(null, {file : "content-script.js"});
 
 }
 
@@ -50,10 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
         //     currentTab = tab;
         //     tab.console.log(tab.title);
         // });
-
-        chrome.tabs.executeScript({
-          code: 'console.log("Testing")'
-        })
             fillUsername();
 
         // if (typeof(Storage) !== "undefined") {

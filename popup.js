@@ -21,22 +21,20 @@
 
 
 function storeURL() {
-     chrome.tabs.query({active:true, currentWindow:true}, function (tabs) {
+     chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
           var activeTab = tabs[0];
           var tabURL = activeTab.url;
           localStorage.setItem("url", tabURL);
 
-     });
+    });
 
-} ;
+}
 
 function fillUsername() {
-    // body...
     chrome.tabs.executeScript({
           code: 'var formObjects = document.getElementsByClassName("form-control"); console.log("Number of items: " + formObjects.length); var userField = formObjects[0]; userField.value = "Musta Rohman";'
     });
-    // var userField = formObjects[0];
-    // userField.value = "Musta Rohman";
+
 }
 
 
@@ -47,13 +45,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var setButton = document.getElementById('settings');
     setButton.addEventListener('click', function () {
 
-        // console.log("hellooooo");
 
         // chrome.tabs.getSelected(null, function (tab) {
         //     currentTab = tab;
         //     tab.console.log(tab.title);
         // });
-        fillUsername();
+
+        chrome.tabs.executeScript({
+          code: 'console.log("Testing")'
+        })
+            fillUsername();
 
         // if (typeof(Storage) !== "undefined") {
         //     storeURL();
@@ -61,10 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         //     alert("Sorry");
         // }
 
-        // chrome.tabs.executeScript({
-        //   code: 'console.log("Testing")'
-        // });
-    });
+        });
 
     var viewButton = document.getElementById('view');
     viewButton.addEventListener('click', function () {

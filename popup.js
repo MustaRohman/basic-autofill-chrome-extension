@@ -22,10 +22,12 @@ function isUrlStored(url) {
   if (typeof(Storage) !== "undefined") {
         if (localStorage.urls) {
           var storedURL = JSON.parse(localStorage.getItem("urls"));
-          for (var i = 0; i < storedURL.length; i++) {
-            if (storedURL[i] == url) {
-              return true;
-            } 
+          if (storedURL !== null){
+            for (var i = 0; i < storedURL.length; i++) {
+              if (storedURL[i] == url) {
+                return true;
+              } 
+            }
           }
         }
   }
@@ -34,23 +36,12 @@ function isUrlStored(url) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    var currentURL;
+    var currentURL = "";
 
     chrome.tabs.getSelected(null, function (tab) {
             currentURL = tab.url;
     });
-    var checkURL = isUrlStored(currentURL);    // if (typeof checkURL === 'boolean'){
-    //   alert("YES boolean");
-    // } else {
-    //   alert("NOT boolean");
-    // }
-    // chrome.tabs.executeScript({
-    //   code: 'console.log(checkURL)'
-    // })
-
-    
-
-
+    var checkURL = isUrlStored(currentURL); 
 
     var setButton = document.getElementById('settings');
     setButton.addEventListener('click', function () {

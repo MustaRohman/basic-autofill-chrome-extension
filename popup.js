@@ -1,67 +1,77 @@
-// document.addEventListenerdocument.addEventListener('DOMContentLoaded', function() {
-//   var checkPageButton = document.getElementById('checkPage');
-//   checkPageButton.addEventListener('click', function() {
 
-//     chrome.tabs.getSelected(null, function(tab) {
-//       d = document;
-
-//       var f = d.createElement('form');
-//       f.action = 'http://gtmetrix.com/analyze.html?bm';
-//       f.method = 'post';
-//       var i = d.createElement('input');
-//       i.type = 'hidden';
-//       i.name = 'url';
-//       i.value = tab.url;
-//       f.appendChild(i);
-//       d.body.appendChild(f);
-//       f.submit();
-//     });
-//   }, false);
-// }, false);
-
-
-function storeURL() {
+function storeURL(url) {
      chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
-          var activeTab = tabs[0];
-          var tabURL = activeTab.url;
-          localStorage.setItem("url", tabURL);
-
+          var storedURL = [];
+          if (typeof(Storage) !== "undefined") {
+            storedURL = JSON.parse(localStorage.getItem("urls"));
+            if (storedURL === null) {
+              console.assert(storedURL !== null, "storedURL is null");
+              storedURL = [];
+            }
+            storedURL.push(url);
+            localStorage.setItem("urls", JSON.stringify(storedURL));
+          }
     });
-
 }
 
 function fillUsername() {
     chrome.tabs.executeScript(null, {file : "content-script.js"});
-
 }
 
+function isUrlStored(url) {
+  if (typeof(Storage) !== "undefined") {
+        if (localStorage.urls) {
+          var storedURL = JSON.parse(localStorage.getItem("urls"));
+          for (var i = 0; i < storedURL.length; i++) {
+            if (storedURL[i] == url) {
+              return true;
+            } 
+          }
+        }
+  }
+  return false;
+} 
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    var currentTab;
+    var currentURL;
+
+    chrome.tabs.getSelected(null, function (tab) {
+            currentURL = tab.url;
+    });
+    var checkURL = isUrlStored(currentURL);    // if (typeof checkURL === 'boolean'){
+    //   alert("YES boolean");
+    // } else {
+    //   alert("NOT boolean");
+    // }
+    // chrome.tabs.executeScript({
+    //   code: 'console.log(checkURL)'
+    // })
+
+    
+
+
 
     var setButton = document.getElementById('settings');
     setButton.addEventListener('click', function () {
 
-
-        // chrome.tabs.getSelected(null, function (tab) {
-        //     currentTab = tab;
-        //     tab.console.log(tab.title);
-        // });
-            fillUsername();
-
-        // if (typeof(Storage) !== "undefined") {
-        //     storeURL();
-        // } else {
-        //     alert("Sorry");
-        // }
-
-        });
+      if (checkURL) {
+        fillUsername();
+        chrome.tabs.executeScript({
+          code: 'console.log("Auto fill form?")'
+        })
+      } else {
+        chrome.tabs.executeScript({
+          code: 'console.log("No stored data")'
+        })
+      }
+        // fillUsername();
+    });
 
     var viewButton = document.getElementById('view');
     viewButton.addEventListener('click', function () {
-         var tabURL = localStorage.url;
-         alert(tabURL);
+         // var tabURL = localStorage.url;
+         // alert(tabURL);
     })
 
 });

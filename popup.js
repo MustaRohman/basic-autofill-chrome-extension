@@ -15,7 +15,9 @@ function storeURL(url) {
 }
 
 function fillUsername() {
-    chrome.tabs.executeScript(null, {file : "content-script.js"});
+  chrome.tabs.executeScript(null, { file: "jquery-3.0.0.js" }, function () {
+    chrome.tabs.executeScript(null, { file: "content-script.js" });
+    });
 }
 
 function isUrlStored(url) {
@@ -61,8 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var viewButton = document.getElementById('view');
     viewButton.addEventListener('click', function () {
-         // var tabURL = localStorage.url;
-         // alert(tabURL);
+         storeURL(currentURL);
     })
 
 });

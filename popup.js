@@ -10,6 +10,7 @@ function storeURL(url) {
             }
             storedURL.push(url);
             localStorage.setItem("urls", JSON.stringify(storedURL));
+            console.log(url + " has been stored");
           }
     });
 }
@@ -27,6 +28,7 @@ function isUrlStored(url) {
           if (storedURL !== null){
             for (var i = 0; i < storedURL.length; i++) {
               if (storedURL[i] == url) {
+                console.log(storedURL[i]);
                 return true;
               } 
             }
@@ -43,12 +45,11 @@ document.addEventListener('DOMContentLoaded', function () {
     chrome.tabs.getSelected(null, function (tab) {
             currentURL = tab.url;
     });
-    var checkURL = isUrlStored(currentURL); 
+    
 
     var setButton = document.getElementById('settings');
     setButton.addEventListener('click', function () {
-
-      if (checkURL) {
+      if (isUrlStored(currentURL)) {
         fillUsername();
         chrome.tabs.executeScript({
           code: 'console.log("Auto fill form?")'
@@ -58,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
           code: 'console.log("No stored data")'
         })
       }
-        // fillUsername();
     });
 
     var viewButton = document.getElementById('view');

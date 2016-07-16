@@ -51,9 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
     setButton.addEventListener('click', function () {
       if (isUrlStored(currentURL)) {
         fillUsername();
-        chrome.tabs.executeScript({
-          code: 'console.log("Auto fill form?")'
-        })
       } else {
         chrome.tabs.executeScript({
           code: 'console.log("No stored data")'
@@ -63,7 +60,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var viewButton = document.getElementById('view');
     viewButton.addEventListener('click', function () {
+      if (!isUrlStored(currentURL)){
          storeURL(currentURL);
+       } else {
+          console.log("Website Url already stored");
+        
+       }
     })
 
 });

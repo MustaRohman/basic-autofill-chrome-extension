@@ -2,9 +2,11 @@
 
 ### What is this repository for? ###
 
-* Quick summary
 This is a prototype of the AutoFill extension for the Chrome browser.
 Assumptions:
+
+* Assumptions
+The extension in its current form uses static username and password data. I have assumed that user data would be retrieved using an API from a server. From what I've read, I think it would be more secure to do it this way instead of storing it locally. Also, if there are to be other extensions/plugins/mobile-apps in the future, this would be ideal. 
 
 ### How do I get set up? ###
 

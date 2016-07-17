@@ -16,7 +16,7 @@ This is a prototype of the AutoFill extension for the Chrome browser.
 
 The extension should now appear in the UI of Chrome, next to the address bar. You should be able to interact with the new page action button.
 
-### Chrome Extension Architecture ###
+### Extension Architecture ###
 - popup.html
 - popup.js
 - content-script.js

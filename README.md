@@ -16,6 +16,15 @@ This is a prototype of the AutoFill extension for the Chrome browser.
 
 The extension should now appear in the UI of Chrome, next to the address bar. You should be able to interact with the new page action button.
 
+### Chrome Extension Architecture ###
+- popup.html
+- popup.js
+- content-script.js
+- jquery-3.0.0.js
+- manifest.json
+- settings.html
+- icon.png
+
 ### Assumptions ###
 The extension in its current form uses static username and password data. I have assumed that user data would be retrieved using an API from a server. From what I've read, I think it would be more secure to do it this way instead of storing it locally. Also, if there are to be other extensions/plugins/mobile-apps in the future, this would be ideal. 
 

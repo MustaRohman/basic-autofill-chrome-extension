@@ -6,7 +6,7 @@ function isUrlStored(storedUrls, pageURL) {
   console.log(pageUrl, ": Current page url. No. of stored URLS: ", storedUrls.length);
   var value = false;
     for (var i = 0; i < storedUrls.length; i++) {
-        var currentURL = urls[i];
+        var currentURL = storedUrls[i];
         console.log(currentURL, ": url at ", i);
         if (currentURL.trim() === pageUrl.trim()){
           value = true;
@@ -16,31 +16,46 @@ function isUrlStored(storedUrls, pageURL) {
     return value;
 }
 
-//Add event listener to submit button
 /**
  * @param  {String} Uses URL string to 
  * @return {[type]}
  */
-function fillForm(url) {
+function getInputFields() {
     var userNameInput = $("input[type='email']");
     console.log("Number of text inputs: ", userNameInput.length);
     if (userNameInput.length === 0) {
         userNameInput = $("input[type='text']");
     }
-    userNameInput.first().val('MustaRohman');
-    $("input[type='password']").first().val('Random');
+    var inputFields = [userNameInput.first(), $("input[type='password']").first()];
+    return inputFields;
+}
+
+function saveData(url) {
+  var submitButton = $("input[type='submit']");
+  submitButton.first().click(function () {
+    if(confirm("Save form data?")){
+      console.log("Saving form data...");
+      // Retrieve data from form, and store using API
+      var inputFields = getInputFields();
+      // Here is where we would retrieve the values from the input fields
+    }
+  })
 }
 
 var pageUrl = window.location.href;
+if (!isUrlStored(pageUrl)){
+  saveData(pageUrl);
+}
 console.log(pageUrl.trim());
-var value = false;
 
 chrome.storage.sync.get('urls', function (items) {
     urls = items.urls;
     if (isUrlStored(urls, pageUrl)){
       console.log("url has been found");
           if (confirm("Fill in form?")){
-            fillForm("url");
+            var inputFields = getInputFields();
+            inputFields[0].val('MustaRohman');
+            inputFields[1].val('Random');
             console.log("Form has been filled");
           } else {
             console.log("form filling cancelled")
@@ -48,13 +63,3 @@ chrome.storage.sync.get('urls', function (items) {
     }
   }); 
 
-// var url = window.location.href;
-// console.log(url.trim());
-// if (isUrlStored(url)){
-//   if (confirm("Fill in form?")){
-//     fillForm("url");
-//     console.log("Form has been filled");
-//   }
-// } else {
-//   console.log(url, " not found")
-// }

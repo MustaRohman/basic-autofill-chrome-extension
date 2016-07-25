@@ -6,7 +6,7 @@ This is a prototype of the AutoFill extension for the Chrome browser.
 
 ### How do I get set up? ###
 
-1. Download repository folder using "Downloads" link on left side-bar. You can download the repo from a specific branch in the Downloads screen. (Download "chrome-storage" for latest updates. These branches will be merged, so watch this space)
+1. Download repository folder using "Downloads" link on left side-bar. You can download the repo from a specific branch in the Downloads screen. (Download "js" for latest updates. These branches will be merged, so watch this space)
 2. Open Chrome. Click on "Settings" under the drop-down menu
 ![Screen Shot 2016-07-10 at 15.25.12.png](https://bitbucket.org/repo/Xa8Xjg/images/3110307171-Screen%20Shot%202016-07-10%20at%2015.25.12.png)
 3. Click on "Extensions" link on the left, and check the "Developer Mode" box

@@ -1,48 +1,56 @@
-// document.addEventListenerdocument.addEventListener('DOMContentLoaded', function() {
-//   var checkPageButton = document.getElementById('checkPage');
-//   checkPageButton.addEventListener('click', function() {
 
-//     chrome.tabs.getSelected(null, function(tab) {
-//       d = document;
+function storeURL(url) {
+    chrome.storage.sync.get('urls', function (items) {
+        var urls = items.urls;
+        if (!urls) {
+            urls = [];
+        } 
+        urls.push(url.trim());
+        chrome.storage.sync.set({'urls': urls});
+        console.log(url, " has been stored!");
+    });
+}
 
-//       var f = d.createElement('form');
-//       f.action = 'http://gtmetrix.com/analyze.html?bm';
-//       f.method = 'post';
-//       var i = d.createElement('input');
-//       i.type = 'hidden';
-//       i.name = 'url';
-//       i.value = tab.url;
-//       f.appendChild(i);
-//       d.body.appendChild(f);
-//       f.submit();
-//     });
-//   }, false);
-// }, false);
+function fillUsername() {
+  chrome.tabs.executeScript(null, { file: "jquery-3.0.0.js" }, function () {
+    chrome.tabs.executeScript(null, { file: "content-script.js" });
+    });
+}
 
+function isUrlStored(url) {
+  var value = false;
+  var urls = [];
+  chrome.storage.sync.get('urls', function (items) {
+    console.log(url, ": Current page url");
+    urls = items.urls;
+    }); 
 
+  for (var i = 0; i < urls.length; i++) {
+        var currentURL = urls[i];
+        console.log(currentURL, ": url at ", i);
+        value = currentURL.trim() === url.trim();
+        if (value){
+            break;
+        }   
+    }
+  return value;
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-	// var anObject = {
-	// 	name: "anObject",
-	// 	number: 28,
-	// 	something: 'something'
-	// }
+$( document ).ready(function () {
 
-	// alert(anObject.name);
+    var currentURL = "";
 
-  // chrome.tabs.query({active:true, currentWindow:true}, function (tabs) {
-  // 	// body...
-  // 	var tab = tabs[0];
-  // 	tab.
-  // })
+    chrome.tabs.getSelected(null, function (tab) {
+            currentURL = tab.url;
+    });
 
-	var setButton = document.getElementById('settings');
-	setButton.addEventListener('click', function () {
-		// body...
-		window.open("http://www.google.com");
-	})
-
-  
-  
+    var viewButton = $("#view");
+    viewButton.click(function () {
+      if (!isUrlStored(currentURL)){
+         storeURL(currentURL);
+      } else {
+         console.log("Website Url already stored");
+       }
+    })
 
 });

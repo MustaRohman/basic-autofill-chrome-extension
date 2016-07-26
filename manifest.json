@@ -5,11 +5,23 @@
   "description": "This extension will auto-fill login pages",
   "version": "1.0",
 
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "css": [],
+      "js": ["jquery-3.0.0.js", "content-script.js"],
+      "run_at": "document_end"
+    }
+  ],
+
   "browser_action": {
    "default_icon": "icon.png",
    "default_popup": "popup.html"
   },
   "permissions": [
-   "tabs"
+    "tabs",
+    "activeTab",
+    "http://*/",
+    "storage"
    ]
 }

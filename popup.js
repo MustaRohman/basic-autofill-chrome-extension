@@ -1,18 +1,5 @@
 
 function storeURL(url) {
-    //  chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
-    //       var storedURL = [];
-    //       if (typeof(Storage) !== "undefined") {
-    //         storedURL = JSON.parse(localStorage.getItem("urls"));
-    //         if (storedURL === null) {
-    //           console.assert(storedURL !== null, "storedURL is null");
-    //           storedURL = [];
-    //         }
-    //         storedURL.push(url);
-    //         localStorage.setItem("urls", JSON.stringify(storedURL));
-    //         console.log(url + " has been stored");
-    //       }
-    // });
     chrome.storage.sync.get('urls', function (items) {
         var urls = items.urls;
         if (!urls) {
@@ -31,25 +18,12 @@ function fillUsername() {
 }
 
 function isUrlStored(url) {
-  // if (typeof(Storage) !== "undefined") {
-  //       if (localStorage.urls) {
-  //         var storedURL = JSON.parse(localStorage.getItem("urls"));
-  //         if (storedURL !== null){
-  //           for (var i = 0; i < storedURL.length; i++) {
-  //             if (storedURL[i] == url) {
-  //               console.log(storedURL[i]);
-  //               return true;
-  //             } 
-  //           }
-  //         }
-  //       }
-  // }
   var value = false;
   var urls = [];
   chrome.storage.sync.get('urls', function (items) {
     console.log(url, ": Current page url");
     urls = items.urls;
-  }); 
+    }); 
 
   for (var i = 0; i < urls.length; i++) {
         var currentURL = urls[i];
@@ -62,7 +36,7 @@ function isUrlStored(url) {
   return value;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+$( document ).ready(function () {
 
     var currentURL = "";
 
@@ -70,24 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
             currentURL = tab.url;
     });
 
-    var setButton = document.getElementById('settings');
-    setButton.addEventListener('click', function () {
-        var value = isUrlStored(currentURL);
-      if (value) {
-        fillUsername();
-        console.log("Form has been filled");
-      } else {
-        console.log("No stored data");
-      }
-    });
-
-    var viewButton = document.getElementById('view');
-    viewButton.addEventListener('click', function () {
+    var viewButton = $("#view");
+    viewButton.click(function () {
       if (!isUrlStored(currentURL)){
          storeURL(currentURL);
-       } else {
-          console.log("Website Url already stored");
-        
+      } else {
+         console.log("Website Url already stored");
        }
     })
 

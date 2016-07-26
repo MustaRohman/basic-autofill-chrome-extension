@@ -1,0 +1,27 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: 
+}
+
+form {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+br {
+	/*margin-bottom: 20px;*/
+}
+
+input {
+	margin-bottom: 15px;
+	padding: 7px;
+	align-self: center;
+}
+
+h3 {
+	color: grey;
+	background-color: black;
+	padding: 7px;
+	margin-top: 0px;
+}

@@ -17,14 +17,15 @@ This is a prototype of the AutoFill extension for the Chrome browser.
 The extension should now appear in the UI of Chrome, next to the address bar. You should be able to interact with the new page action button.
 
 ### How to test ###
+1. Follow the steps above to set up the extension
+2. Go on to a website that has a login page or form
+3. Click on the AutoFill extension icon next to the address bar
+4. Click on the "Store URL" button in the extension popup
+5. Now when you refresh the page, a confirm dialog box should appear asking to fill login form
+6. When ok is clicked, the username/email and password field should be filled with static strings.
+7. Currently these static (fake) login credentials are used for testing and security purposes
+
 (This will be updated as new functionality/changes is added)
-* Follow the steps above to set up the extension
-* Go on to a website that has a login page or form
-* Click on the AutoFill extension icon next to the address bar
-* Click on the "Store URL" button in the extension popup
-* Now when you refresh the page, a confirm dialog box should appear asking to fill login form
-* When ok is clicked, the username/email and password field should be filled with static strings.
-* Currently these static (fake) login credentials are used for testing and security purposes
 
 ### Extension Architecture ###
 - popup.html

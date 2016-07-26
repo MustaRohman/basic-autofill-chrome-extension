@@ -20,10 +20,11 @@ The extension should now appear in the UI of Chrome, next to the address bar. Yo
 (This will be updated as new functionality/changes is added)
 1. Follow the steps above to set up the extension
 2. Go on to a website that has a login page or form
-3. Click on the AutoFill extension icon next to the address bar
-4. Click on the "Store URL" button in the extension popup
-5. Now when you refresh the page, a confirm dialog box should appear asking to fill login form
-6. When ok is clicked, the username/email and password field should be filled with static strings. Currently these static (fake) login credentials are used for testing and security purposes
+1. Click on the AutoFill extension icon next to the address bar
+1. Click on the "Store URL" button in the extension popup
+1. Now when you refresh the page, a confirm dialog box should appear asking to fill login form
+1. When ok is clicked, the username/email and password field should be filled with static strings.
+1. Currently these static (fake) login credentials are used for testing and security purposes
 
 ### Extension Architecture ###
 - popup.html

@@ -53,4 +53,9 @@ $( document ).ready(function () {
        }
     })
 
+    var settingsButton = $("#settings");
+    settingsButton.click(function () {
+        window.open("settings.html");
+    })
+
 });

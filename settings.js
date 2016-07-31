@@ -21,11 +21,15 @@ function createListGroupItem(username, websiteName) {
 }
 
 function createListGroup(urlList) {
-	for (var i = 5; i >= 0; i--) {
+	for (var i = 20; i >= 0; i--) {
 		createListGroupItem("mustarohman@gmail.com", "Github");
 	}
 }
 
 $(document).ready(function () {
 	createListGroup("urlList")
+	var names = ["Github", "Bitbucket", "Google", "Twitter"];
+	$("#tags").autocomplete({
+		source: names
+	})
 });

@@ -1,0 +1,59 @@
+body {
+	background-color: #ECEFF1;
+}
+h1 {
+	text-align: center;
+	font-size: 25px;
+	margin-bottom: 50px;
+	color: #ECEFF1;
+	background-color: #263238;
+	padding: 15px;
+}
+
+div .scroll {
+	height: 530px;
+	overflow: scroll;
+	width: 340px;
+	border: 1px solid #607D8B;
+	border-radius: 5px;
+}
+
+#tags {
+	width: 340px;
+	/*padding: 6px;*/
+	margin-bottom: 5px;
+}
+
+#website-name {
+	width: 370px;
+	height: 40px;
+	font-size: 30px;
+	/*margin-bottom: 7px;*/
+}
+
+form {
+	width: 710px;
+	/*background-color: #607D8B;*/
+	border: 1px solid #607D8B;
+	border-radius: 5px;
+	padding: 20px;
+	color: #263238;
+	background-color: white
+}
+
+
+.username {
+	width: 48%;
+}
+
+.buttons button {
+	width: 168px;
+	font-size: 20px;
+	padding: 2px;
+}
+
+.col-sm-4 {
+	padding-top: 5px;
+	/*padding-right: 0px;*/
+}
+

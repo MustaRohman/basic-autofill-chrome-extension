@@ -4,7 +4,7 @@ function checkLoginCredentials() {
 
 
 $(document).ready(function () {
-    var submitBtn = $("#submit");
+    var submitBtn = $(".button");
     console.log(submitBtn.length);
     submitBtn.click(function () {
         console.log("Testing Submit button");

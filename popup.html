@@ -4,10 +4,17 @@
     <title>AutoFill</title>
     <script type="text/javascript" src="jquery-3.0.0.js"></script>
     <script type="text/javascript" src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="popup.css">
   </head>
   <body>
-    <button id="settings">Settings</button>
-    <button id="view">StoreURL</button>
+    <div class="btn-group-vertical" role="group" aria-label="...">
+    <button type="button" class="list-group-item" id="settings">Settings</button>
+      <button type="button" class="list-group-item" id="view">Store URL</button>
+      <button type="button" class="btn btn-danger">Logout</button>
+    </div>
+    
+    <!-- <button id="settings">Settings</button>
+    <button id="view">StoreURL</button> -->
   </body>
 </html>

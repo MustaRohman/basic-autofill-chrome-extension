@@ -33,10 +33,11 @@ div .scroll {
 
 form {
 	width: 710px;
+	height: 425x;
 	/*background-color: #607D8B;*/
 	border: 1px solid #607D8B;
 	border-radius: 5px;
-	padding: 20px;
+	padding: 35px;
 	color: #263238;
 	background-color: white
 }
@@ -44,6 +45,7 @@ form {
 
 .username {
 	width: 48%;
+	margin-bottom: 15px;
 }
 
 .buttons button {

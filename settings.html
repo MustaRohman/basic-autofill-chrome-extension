@@ -16,14 +16,15 @@
 		<div class="container">
 			<!-- Search bar row-->
 			<div class="row">
-				<div class="ui-widget col-sm-offset-8 col-sm-4">
-					<input id="tags" placeholder="Search...">
+				<div class="ui-widget col-xs-offset-6 col-sm-offset-8 col-xs-6 col-sm-4">
+					<input id="names" placeholder="Search...">
 				</div>
 			</div>
 
 			<!-- Form and list-group row -->
 			<div class="row">
-				<div class="col-sm-8">
+				<!-- Form -->
+				<div class="col-xs-6 col-sm-8">
 					<form role="form">
 						<div class="form-group">
 							<label class="sr-only" for="website-name">Website Name</label>
@@ -47,22 +48,23 @@
 						</div>
 						<div class="form-group">
 							<label for="notes">Notes</label>
-							<textarea class="form-control" rows="3" id="notes"></textarea>
+							<textarea class="form-control" rows="3" id="notes" placeholder="Enter notes (optional)"></textarea>
 						</div>
 							<button type="button" class="col-sm-offset-11 btn btn-primary">Save</button>
 					</form>
 				</div>
-				<div class="col-sm-4">
+				<!-- List-group of websites -->
+				<div class="col-xs-6 col-sm-4">
 					<div class="list-group scroll pull-left"></div>
 				</div>
 			</div>
 
-			<!-- Add/delete row -->
+			<!-- Add/delete buttons row -->
 			<div class="row">
-				<div class="col-sm-offset-8 col-sm-4">
+				<div class="col-xs-offset-6 col-sm-offset-8 col-xs-6 col-sm-4">
 					<div class="buttons center-block">
-						<button type="button" class="btn btn-default">-</button>
-						<button type="button" class="btn btn-primary">+</button>
+						<button type="button" class="btn btn-default pull-left">-</button>
+						<button type="button" class="btn btn-primary pull-right">+</button>
 					</div>
 				</div>
 			</div>

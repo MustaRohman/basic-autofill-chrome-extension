@@ -4,6 +4,11 @@
 
 This is a prototype of the AutoFill extension for the Chrome browser. The focus of the extension is currently front-end functionality.Server-side functionality has not been implemented. This extension uses static/fake data in order to test certain features. 
 
+### Assumptions ###
+The extension in its current form uses static username and password data. I have assumed that user data would be retrieved using an API from a server. From what I've read, I think it would be more secure to do it this way instead of storing it locally. Also, if there are to be other extensions/plugins/mobile-apps in the future, this would be ideal. 
+
+Currently, the URLs that are to be auto-filled will be stored using chrome.storage or HTML5 local storage. However, it may be best to store/retrieve in/from server only. The problem with chrome.storage is that it isn't encrypted, and HTML5 local storage will require message passing, since storage is differs depending on context (web pages and extension pages are different contexts). For the current prototype, we will use chrome storage due to its simplicity in code.
+
 ### How do I get set up? ###
 
 1. Download repository folder using "Downloads" link on left side-bar. You can download the repo from a specific branch in the Downloads screen. (Download "master" for latest updates. These branches will be merged, so watch this space)
@@ -68,8 +73,3 @@ This library is used to make widgets built upon the jQuery library. Currently jQ
 - Bootstrap
 
 HTML, CSS and Javascript framework which helps to mobile-first front-end development faster and easier. Bootstrap has been used for all web pages included in this extension. 
-
-### Assumptions ###
-The extension in its current form uses static username and password data. I have assumed that user data would be retrieved using an API from a server. From what I've read, I think it would be more secure to do it this way instead of storing it locally. Also, if there are to be other extensions/plugins/mobile-apps in the future, this would be ideal. 
-
-Currently, the URLs that are to be auto-filled will be stored using chrome.storage or HTML5 local storage. However, it may be best to store/retrieve in/from server only. The problem with chrome.storage is that it isn't encrypted, and HTML5 local storage will require message passing, since storage is differs depending on context (web pages and extension pages are different contexts). For the current prototype, we will use HTML5 local storage.

@@ -20,10 +20,11 @@ The extension should now appear in the UI of Chrome, next to the address bar. Yo
 1. Follow the steps above to set up the extension
 2. Go on to a website that has a login page or form
 3. Click on the AutoFill extension icon next to the address bar
-4. Click on the "Store URL" button in the extension popup
-5. Now when you refresh the page, a confirm dialog box should appear asking to fill login form
-6. When ok is clicked, the username/email and password field should be filled with static strings.
-7. Currently these static (fake) login credentials are used for testing and security purposes
+4. On the popup-login page, click submit.
+5. Click on the "Store URL" button in the extension popup
+6. Now when you refresh the page, a confirm dialog box should appear asking to fill login form
+7. When ok is clicked, the username/email and password field should be filled with static strings.
+8. Currently these static (fake) login credentials are used for testing and security purposes
 
 (This will be updated as new functionality/changes is added)
 
@@ -56,8 +57,17 @@ So content-script.js contains our form-filling functionality, which runs when th
 Icon for the browser action
 
 ### Libraries ###
-- Jquery 
+- jQuery 
+
+This JavaScript library makes it easier and simpler to manipulate the DOM, as well as event handling. It's also make Javascript code much more readable overall.
+
+- jQuery UI
+
+This library is used to make widgets built upon the jQuery library. Currently jQuery UI is only used for the for the autocomplete search bar, but it will likely be used for other features as this extension evolves.
+
 - Bootstrap
+
+HTML, CSS and Javascript framework which helps to mobile-first front-end development faster and easier. Bootstrap has been used for all web pages included in this extension. 
 
 ### Assumptions ###
 The extension in its current form uses static username and password data. I have assumed that user data would be retrieved using an API from a server. From what I've read, I think it would be more secure to do it this way instead of storing it locally. Also, if there are to be other extensions/plugins/mobile-apps in the future, this would be ideal. 

@@ -38,7 +38,7 @@ $( document ).ready(function () {
             currentURL = tab.url;
     });
 
-    var viewButton = $("#store");
+    var viewButton = $("#view");
     viewButton.click(function () {
       if (!isUrlStored(currentURL)){
          storeURL(currentURL);

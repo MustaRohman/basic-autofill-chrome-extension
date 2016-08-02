@@ -72,4 +72,6 @@ This library is used to make widgets built upon the jQuery library. Currently jQ
 
 - Bootstrap
 
-HTML, CSS and Javascript framework which helps to mobile-first front-end development faster and easier. Bootstrap has been used for all web pages included in this extension. 
+HTML, CSS and Javascript framework which helps to mobile-first front-end development faster and easier. Bootstrap has been used for all web pages included in this extension.
+
+### Safari, Firefox, IE (Edge)... ###

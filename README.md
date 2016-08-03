@@ -74,7 +74,7 @@ This library is used to make widgets built upon the jQuery library. Currently jQ
 
 HTML, CSS and Javascript framework which helps to mobile-first front-end development faster and easier. Bootstrap has been used for all web pages included in this extension.
 
-### Safari, Firefox, IE (Edge)... ###
+### Safari and Firefox extensions ###
 
 - Safari 
 
@@ -82,8 +82,10 @@ Safari and Chrome extensions have similarities, but there are some key differenc
 
 In terms of converting the Chrome extension into one for Safari, we would have to make some changes. First off, we can use some the files we've already created, e.g. popup-login.html. We can turn this into something called "popover" which is very similar to "popups" in Chrome. 
 
-Safari extensions allow script injection, so we can still use content-script.js. Of course, we would have to make changes to the script (replace chrome.storage and retrieve/store from/to server).
+Safari extensions allow script injection, so we can still use content-script.js. Of course, we would have to make changes to the script (replace chrome APIs).
+
+More info: https://developer.apple.com/library/safari/documentation/UserExperience/Conceptual/SafariExtensionsConversionGuide/Chapters/Chrome.html
 
 - Firefox
 
-From what I've read, converting the Chrome extension to a Firefox add-on is not as easy as converting to Safari. This is because the architecture of the add-on is different to Chrome/Safari, and a lot of the base files may need to be reworked. Another factor that needs to be taken into consideration is that Firefox are migrating from the standard Add-on SDK to WebExtension API, aimed to be the new standard by 2017. This means that a lot of the APIs that belong to the Add-on SDK will be deprecated and it is recommended to stick to [high-level APIs](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs) in order to make migration easier. More info: https://developer.mozilla.org/en-US/Add-ons 
+From what I've read, converting the Chrome extension to a Firefox add-on is not as easy as converting to Safari. This is because the architecture of the add-on is different to Chrome/Safari, and a lot of the base files may need to be reworked. Another factor that needs to be taken into consideration is that Firefox are migrating from the standard Add-on SDK to WebExtension API, aimed to be the new standard by 2017. This means that a lot of the APIs that belong to the Add-on SDK will be deprecated and it is recommended to stick to [high-level APIs](https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs) in order to make migration easier. More info: https://developer.mozilla.org/en-US/Add-ons

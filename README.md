@@ -75,3 +75,11 @@ This library is used to make widgets built upon the jQuery library. Currently jQ
 HTML, CSS and Javascript framework which helps to mobile-first front-end development faster and easier. Bootstrap has been used for all web pages included in this extension.
 
 ### Safari, Firefox, IE (Edge)... ###
+
+- Safari 
+
+Safari and Chrome extensions have similarities, but there are some key differences. One of which is the Extension builder, an interface that allows developers to build, install and reload extensions. These features are available with Chrome developer tools, however it's nice to have it all in one place.
+
+In terms of converting the Chrome extension into one for Safari, we would have to make some changes. First off, we can use some the files we've already created, e.g. popup-login.html. We can turn this into something called "popover" which is very similar to "popups" in Chrome. 
+
+Safari extensions allow script injection, so we can still use content-script.js. Of course, we would have to make changes to the script (replace chrome.storage and retrieve/store from/to server).

@@ -45,7 +45,7 @@ This is the first web page that will be shown in the popup window that appears a
 
 - popup.html, popup.js, popup.css
 
-This is page that is viewed once the user clicks on submit in popup-login. This page is loaded into browser action popup view. This page has three buttons: Settings will open settings.html, Store URL saves the current to test the autofilling functionality (as mentioned in “How to Test”), and finally 
+This is page that is viewed once the user clicks on submit in popup-login. It is essentially the main menu after logging in. This page is loaded into browser action popup view. It has three buttons: Settings will open settings.html, Store URL saves the current to test the autofilling functionality (as mentioned in “How to Test”), and finally 
 Logout (unimplemented). 
 
 - settings.html, settings.js, settings.css

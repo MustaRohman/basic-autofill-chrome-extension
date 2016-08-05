@@ -1,4 +1,7 @@
-
+/**
+ * [This function is mainly for testing purposes. It stores the URL using Chrome.storage]
+ * @param  {[type]} url [The URL to be stored]
+ */
 function storeURL(url) {
     chrome.storage.sync.get('urls', function (items) {
         var urls = items.urls;
@@ -11,6 +14,11 @@ function storeURL(url) {
     });
 }
 
+/**
+ * [Checks if the url has been stored]
+ * @param  {[type]}  url 
+ * @return {Boolean}
+ */
 function isUrlStored(url) {
   var value = false;
   var urls = [];
@@ -30,17 +38,16 @@ function isUrlStored(url) {
   return value;
 }
 
-$( document ).ready(function () {
-
+$(document).ready(function () {
     var currentURL = "";
-
     chrome.tabs.getSelected(null, function (tab) {
             currentURL = tab.url;
     });
 
-    var viewButton = $("#view");
+    var viewButton = $("#store");
     viewButton.click(function () {
       if (!isUrlStored(currentURL)){
+        console.log("storing current url: ", currentURL);
          storeURL(currentURL);
       } else {
          console.log("Website Url already stored");
